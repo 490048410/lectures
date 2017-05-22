@@ -13,13 +13,38 @@
 // Post-condition: A linked-list with 'size' number of nodes
 // If size is zero, a valid 'empty' list is returned
 LinkedList* arrayToLinkedList(int *a, int size) {
-  
 
-  return NULL; // return ptr to new list
+    LinkedList *list;
+    list = new LinkedList;
+    list->head = 0;
+    list->tail = 0;
+    if(size == 0){
+        return list;
+    }
+//
+    Node *p = new Node;
+    p->data = a[0];
+    p->next = 0;
+    list->head = p;
+    list->tail = p;
+    for(int i =1; i<size; i++){
+        Node * n = new Node;
+        n->data = a[i];
+        n->next = 0;
+        list->tail->next = n;
+        list->tail = n;
+    }
+    return list;
+     
+  //return NULL; // return ptr to new list
 
 }
-// free up every node on this linked list
-// nice clean code thanks to @sashavolv2 (on Twitter) #woot
+
+// Precondition: A valid linked-list on heap memory
+// Postcondition: Number of elements of the linked-list
+int countListElements(LinkedList * list){
+}
+
 // Precondition: A valid linked-list on heap memory
 // Postcondition: Every element of the linked-list is deleted
 // The list structure is also deleted

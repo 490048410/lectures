@@ -14,6 +14,8 @@ LinkedList * arrayToLinkedList(int array[], int size);
 
 void freeLinkedList(LinkedList * list);
 
+int countListElements(LinkedList * list);
+
 string linkedListToString(LinkedList * list);
 
 void addIntToEndOfList(LinkedList *list, int value);
